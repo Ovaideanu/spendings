@@ -1,0 +1,27 @@
+{
+  "name": "spendings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ovaideanu/spendings.git"
+  },
+  "author": "Octavian Vaideanu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ovaideanu/spendings/issues"
+  },
+  "homepage": "https://github.com/Ovaideanu/spendings#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
