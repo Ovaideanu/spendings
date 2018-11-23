@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 
 exports.index = (req, res, next) => {
     res.render('homePage', {
-        isAuthenticated: req.session.loggedIn
+        isAuthenticated: req.session.loggedIn,
     });
 };
 

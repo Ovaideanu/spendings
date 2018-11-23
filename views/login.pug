@@ -9,6 +9,7 @@ block content
         div.row
             div.col-md
                 form(method="POST" action='login')
+                    input(type='hidden' value=csrfToken name='_csrf')
                     div.form-group
                         label Email
                         input.form-control(type='email' name='email')

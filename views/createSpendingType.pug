@@ -6,6 +6,7 @@ block content
             div.col-md
             div.col-md.col-sm
                 form(action='/create-spending-type' method='POST')
+                    input(type='hidden' value=csrfToken name='_csrf')
                     div.form-group
                         label Please set a spending type
                         input.form-control(type='text' name='spendingType')
