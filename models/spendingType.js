@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const SpendingType = sequelize.define('spending-type', {
+    const SpendingType = sequelize.define('spendingType', {
         id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,

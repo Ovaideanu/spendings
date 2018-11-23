@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "mocha dev --recursive --exit --timeout=10000 tests"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "body-parser": "^1.18.3",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "mysql2": "^1.6.4",
     "pug": "^2.0.3",
     "sequelize": "^4.41.2"

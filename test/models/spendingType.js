@@ -1,5 +1,4 @@
-const expect = require('chai').expect;
-const SpendingType = require('../../models/spendingType');
+const SpendingType = require('../../models')['spendingType'];
 
 describe('Spending Type', () => {
    it('Should create and spending type', done => {

@@ -6,7 +6,10 @@ const spendingTypeController = require('../controllers/spendingType');
 
 router.get('/', homeController.index);
 
-router.get('/register', homeController.register);
+router.get('/login', homeController.loginView);
+router.post('/login', homeController.login);
+
+router.get('/register', homeController.registerView);
 router.post('/register', homeController.registerUser);
 
 router.get('/create-spending-type', spendingTypeController.view);

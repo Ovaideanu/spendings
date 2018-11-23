@@ -9,5 +9,8 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
     .collapse.navbar-collapse.d-md-inline#navbarSupportedContent
         ul.navbar-nav.mr-auto
             li.nav-item
-                a.nav-link(href="/register") Register
-                a.nav-link(href="/create-spending-type") Create spending type
+                if !isAuthenticated
+                    a.nav-link(href="/login") Login
+                    a.nav-link(href="/register") Register
+                if isAuthenticated
+                    a.nav-link(href="/create-spending-type") Create spending type
