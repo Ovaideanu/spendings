@@ -2,15 +2,11 @@ const User = require('../models')['user'];
 const bcrypt = require('bcryptjs');
 
 exports.index = (req, res, next) => {
-    res.render('homePage', {
-        isAuthenticated: req.session.loggedIn,
-    });
+    res.render('homePage');
 };
 
 exports.loginView = (req, res, next) => {
-    res.render('login', {
-        isAuthenticated: req.session.loggedIn
-    });
+    res.render('login');
 };
 
 exports.login = (req, res, next) => {
@@ -40,9 +36,7 @@ exports.login = (req, res, next) => {
 };
 
 exports.registerView = (req, res, next) => {
-    res.render('register', {
-        isAuthenticated: req.session.loggedIn
-    });
+    res.render('register');
 };
 
 exports.registerUser = (req, res, next) => {
