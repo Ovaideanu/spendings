@@ -23,11 +23,13 @@ app.use(csrfProtection);
 app.use((req, res, next) => {
     res.locals.isAuthenticated = req.session.loggedIn;
     res.locals.csrfToken = req.csrfToken();
-    next()
+    next();
 });
 
-const openRoutes = require('./routes/open-routes');
-app.use(openRoutes);
+const userRoutes = require('./routes/userRoutes');
+const dashboardRoutes = require('./routes/dashboardRoutes');
+app.use(userRoutes);
+app.use(dashboardRoutes);
 
 const models = require('./models');
 
