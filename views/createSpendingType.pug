@@ -4,11 +4,17 @@ block content
     div.container
         div.row
             div.col-md
+                p Your spending types list.
+                ul
+                    each spendingType in spendingTypes
+                        li= spendingType.name
+        div.row
+            div.col-md
             div.col-md.col-sm
                 form(action='/create-spending-type' method='POST')
                     input(type='hidden' value=csrfToken name='_csrf')
                     div.form-group
-                        label Please set a spending type
+                        label Spending type name
                         input.form-control(type='text' name='spendingType')
                     button.btn.btn-primary(type='submit') Create
             div.col-md

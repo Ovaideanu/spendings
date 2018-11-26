@@ -1,23 +1,31 @@
 module.exports = (sequelize, Sequelize) => {
-    const SpendingType = sequelize.define('spendingType', {
+    const Spending = sequelize.define('spending', {
         id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
             allowNull: false,
             primaryKey: true
         },
-        name: {
+        type: {
             type: Sequelize.STRING,
             allowNull: false,
+        },
+        amount: {
+            type: Sequelize.DOUBLE,
+            allowNull: false
+        },
+        date: {
+            type: Sequelize.DATE,
+            allowNull:false
         }
     });
 
-    SpendingType.associate = (models) => {
-        SpendingType.belongsTo(models['user'], {
+    Spending.associate = (models) => {
+        Spending.belongsTo(models['user'], {
             foreignKey: 'userId',
             onDelete: 'CASCADE'
         });
     };
 
-    return SpendingType;
+    return Spending;
 };

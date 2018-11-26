@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    div.container
+        div.row
+            div.col-md
+                div.jumbotron
+                    h1.text-center Create spending
+        div.row
+            div.col-md
+                form(method="POST" action='/create-spending')
+                    input(type='hidden' value=csrfToken name='_csrf')
+                    div.form-group
+                        label Spending type
+                        select.form-control(name='type')
+                            option Select a spending type
+                            each spendingType in spendingTypes
+                                option(val=spendingType.name)= spendingType.name
+                    div.form-group
+                        label Amount
+                        input.form-control(type='text' name='amount')
+                    div.form-group
+                        label Date
+                        input.form-control(type='date' name='date')
+                    button.btn.btn-primary(type='submit') Create spending

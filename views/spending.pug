@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    div.container
+        div.row
+            div.col-md
+                div.jumbotron
+                    h1.text-center Your spending
+        div.row
+            div.col-md.mb-3
+                a.btn.btn-primary.btn-block(href='/create-spending') Create spending
+        div.row
+            div.col-md
+                ul.list-group
+                    each spendingItem in spendingItems
+                        li.list-group-item
+                            div.row
+                                div.col
+                                    span= spendingItem.type
+                                div.col
+                                    span= spendingItem.date
+                                div.col.text-right
+                                    span= spendingItem.amount

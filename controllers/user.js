@@ -16,22 +16,24 @@ exports.login = (req, res, next) => {
     User.findOne({
         where: { email: email }
     })
-        .then(user => {
-            bcrypt
-                .compare(password, user.password)
-                .then(doMatch => {
-                    if (doMatch) {
-                        req.session.loggedIn = true;
-                        res.redirect('/');
-                    } else {
-                        res.redirect('/login');
-                    }
-                })
-        })
-        .catch(err => {
-            console.log(err);
-            console.log(err.original);
-        });
+    .then(user => {
+        const userId = user.id;
+        bcrypt
+            .compare(password, user.password)
+            .then(doMatch => {
+                if (doMatch) {
+                    req.session.loggedIn = true;
+                    req.session.userId = userId;
+                    res.redirect('/spending');
+                } else {
+                    res.redirect('/login');
+                }
+            })
+    })
+    .catch(err => {
+        console.log(err);
+        console.log(err.original);
+    });
 };
 
 exports.registerView = (req, res, next) => {
