@@ -1,7 +1,6 @@
 const dateFormat = require('dateformat');
-
-const Spending = require('../models')['spending'];
-const SpendingType = require('../models')['spendingType'];
+const Spending = require('../models').spending;
+const SpendingType = require('../models').spendingType;
 
 exports.index = (req, res, next) => {
     Spending.findAll({

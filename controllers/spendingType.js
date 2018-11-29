@@ -1,24 +1,23 @@
-const SpendingType = require('../models')['spendingType'];
+const SpendingType = require('../models').spendingType;
 
-exports.view = (req, res, next) => {
-    SpendingType.findAll({
-        where: {userId: req.session.userId}
-    })
-    .then(spendingTypes => {
-        res.render('createSpendingType', {
-            spendingTypes: spendingTypes
-        });
-    })
-    .catch(err => console.log(err));
+exports.view = async (req, res, next) => {
+  const spendingTypes =  await SpendingType.findAll({
+    where: { userId: req.session.userId }
+  });
+
+  res.render('createSpendingType', {
+    spendingTypes: spendingTypes
+  })
 };
 
-exports.createSpendingType = (req, res, next) => {
-    const spendingTypeName = req.body.spendingType;
-    const userId = req.session.userId;
-    SpendingType.create({
-        name: spendingTypeName,
-        userId: userId
-    }).then(result => {
-        res.redirect('/create-spending-type');
-    }).catch(err => console.log(err));
+exports.createSpendingType = async (req, res, next) => {
+  const spendingTypeName = req.body.spendingType;
+  const userId = req.session.userId;
+
+  await SpendingType.create({
+    name: spendingTypeName,
+    userId: userId
+  });
+
+  res.redirect('/create-spending-type');
 };

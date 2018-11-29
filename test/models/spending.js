@@ -1,5 +1,5 @@
-const Spending = require('../../models')['spending'];
-const User = require('../../models')['user'];
+const Spending = require('../../models').spending;
+const User = require('../../models').user;
 
 describe('Spending Type', () => {
   beforeEach(async () => {
