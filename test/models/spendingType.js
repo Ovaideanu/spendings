@@ -11,7 +11,7 @@ describe('Spending Type', () => {
   });
 
 
-  it('Should create and spending type', async () => {
+  it('Should create a spending type', async () => {
     const spendingType = await SpendingType.create({
       name: 'Food',
       userId: 1
